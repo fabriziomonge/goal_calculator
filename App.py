@@ -42,6 +42,13 @@ portafogli = portafogli.set_index('ASSET ',1)
 portafogli
 
 
+st.write('''###  ''')
+st.write('''### Portafogli predefiniti: rappresentazione grafica''')
+
+composizione = portafogli[['BOND','COMM','CASH','EQUITY']]
+composizione = composizione*100
+st.bar_chart(composizione)
+
 # In[ ]:
 
 
@@ -148,7 +155,7 @@ st.write('''### Statistiche sull' orizzonte selezionato ''')
 statistiche = campionamento.transpose().describe()
 statistiche = statistiche.drop(['count', 'std', 'min', 'max'],0)
 statistiche['statistiche'] = statistiche.values
-lista_ind = ["Risultato medio delle simulazioni nell' orizzonte temp.", "Risultato medio terzo quartile", "Risultato medio secondo quartile", "Risultato medio terzo quartile"]
+lista_ind = ["Risultato medio delle simulazioni nell' orizzonte temp.", "Risultato medio primo quartile", "Risultato medio secondo quartile", "Risultato medio terzo quartile"]
 statistiche = statistiche[['statistiche']]
 statistiche['indice']=lista_ind
 statistiche = statistiche.set_index('indice',1)
