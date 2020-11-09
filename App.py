@@ -123,6 +123,8 @@ campionamento = df.head(rilevazione).tail(1)
 campionamento_ = np.array(campionamento)
 
 
+st.write('''###  ''')
+st.write('''### Probabilità calcolate ''')
 
 proba = len(np.where(campionamento_>obiettivo)[0])/3
 proba_in = len(np.where(campionamento_>a0)[0])/3
