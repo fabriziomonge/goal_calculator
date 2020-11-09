@@ -16,7 +16,7 @@ from PIL import Image
 
 
 st.title('Pianificatore per obiettivi')
-image = Image.open(r'C:\Users\user\Downloads\Mauro_app\Goal.png')
+image = Image.open('Goal.png')
 st.sidebar.image(image, use_column_width=True)
 
 
@@ -36,7 +36,7 @@ st.write('''### Portafogli predefiniti''')
 # In[157]:
 
 
-portafogli = pd.read_excel(r'C:\Users\user\Downloads\Mauro_app\portafogli.xlsx')
+portafogli = pd.read_excel('portafogli.xlsx')
 portafogli = portafogli.set_index('ASSET ',1)
 # portafogli = portafogli.drop('Unnamed: 2',1)
 portafogli
