@@ -125,7 +125,7 @@ campionamento_ = np.array(campionamento)
 
 proba = len(np.where(campionamento_>obiettivo)[0])/300
 st.write('''###  ''')
-st.markdown('''### La probabilità calcolata di raggiungere il tuo obiettivo è: ''', round(proba*100,2), ''' %''')
+st.write('La probabilità calcolata di raggiungere il tuo obiettivo è: ', round(proba*100,2), ' %')
 
 
 # # Ad ora le variabili da modificare sono: 
