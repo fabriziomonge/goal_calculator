@@ -123,9 +123,12 @@ campionamento = df.head(rilevazione).tail(1)
 campionamento_ = np.array(campionamento)
 
 
-proba = len(np.where(campionamento_>obiettivo)[0])/300
-st.write('''###  ''')
-st.write('La probabilità calcolata di raggiungere il tuo obiettivo è: ', round(proba*100,2), ' %')
+
+proba = len(np.where(campionamento_>obiettivo)[0])/3
+proba_in = len(np.where(campionamento_>a0)[0])/3
+lista_ = [proba, proba_in]
+df_proba = pd.DataFrame(lista_, index =['Probabilità di raggiungere il capitale obiettivo', 'Probabilità di superare il versamento iniziale'], columns = ['Valori in percentuale'] )
+df_proba
 
 
 # # Ad ora le variabili da modificare sono: 
