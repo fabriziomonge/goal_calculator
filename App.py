@@ -146,7 +146,7 @@ statistiche['statistiche'] = statistiche.values
 lista_ind = ["Risultato medio delle simulazioni nell' orizzonte temp.", "Risultato medio terzo quartile", "Risultato medio secondo quartile", "Risultato medio terzo quartile"]
 statistiche = statistiche[['statistiche']]
 statistiche['indice']=lista_ind
-statistiche = statistiche.set_index('indice',1,drop=True)
+statistiche = statistiche.set_index('indice',1)
 statistiche
 
 
