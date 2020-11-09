@@ -14,6 +14,13 @@ from PIL import Image
 
 # In[ ]:
 
+hide_streamlit_style = """
+            <style>
+            
+            footer {visibility: hidden;}
+            </style>
+            """
+st.markdown(hide_streamlit_style, unsafe_allow_html=True)
 
 st.title('Pianificatore per obiettivi')
 image = Image.open('Goal.png')
