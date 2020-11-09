@@ -125,7 +125,7 @@ campionamento_ = np.array(campionamento)
 
 proba = len(np.where(campionamento_>obiettivo)[0])/300
 st.write('''###  ''')
-st.write('''### La probabilità calcolata di ragiungere il tuo obiettivo è: ''', round(proba*100,2), ''' %''')
+st.write('''### La probabilità calcolata di raggiungere il tuo obiettivo è: ''', round(proba*100,2), ''' %''')
 
 
 # # Ad ora le variabili da modificare sono: 
@@ -143,7 +143,10 @@ st.write('''### Statistiche sull' orizzonte selezionato ''')
 statistiche = campionamento.transpose().describe()
 statistiche = statistiche.drop(['count', 'std', 'min', 'max'],0)
 statistiche['statistiche'] = statistiche.values
+lista_ind = ["Risultato medio delle simulazioni nell' orizzonte temp.", "Risultato medio terzo quartile", "Risultato medio secondo quartile", "Risultato medio terzo quartile"]
 statistiche = statistiche[['statistiche']]
+statistiche['indice']=lista_ind
+statistiche = statistiche.set_index('indice',1,drop=True)
 statistiche
 
 
